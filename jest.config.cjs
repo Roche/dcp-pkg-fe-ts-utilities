@@ -1,7 +1,12 @@
 module.exports = {
     testEnvironment: 'node',
     transform: {
-        '^.+\\.tsx?$': 'ts-jest',
+        '^.+\\.tsx?$': ['ts-jest', {
+            tsconfig: { module: 'CommonJS', moduleResolution: 'Node' }
+        }],
+    },
+    moduleNameMapper: {
+        '^(\\.{1,2}/.*)\\.js$': '$1'
     },
     testMatch: [
         "**/__tests__/**/*.test.ts"

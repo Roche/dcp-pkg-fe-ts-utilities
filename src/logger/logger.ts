@@ -1,4 +1,4 @@
-import type { Logger } from '../types/logger';
+import type { Logger } from '../types/logger.js';
 
 const createLogger = (): Logger => {
     let isDevelopment = (() => {

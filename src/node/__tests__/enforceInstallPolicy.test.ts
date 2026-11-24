@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, jest } from '@jest/globals';
 import { createInterface } from 'node:readline/promises';
 
-import { enforceInstallPolicy } from '../enforceInstallPolicy';
+import { enforceInstallPolicy } from '../enforceInstallPolicy.js';
 
 jest.mock('node:readline/promises', () => ({
   createInterface: jest.fn()

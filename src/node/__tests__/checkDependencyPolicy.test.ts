@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, jest } from '@jest/globals';
 import { readFileSync } from 'node:fs';
 
-import { checkDependencyPolicy } from '../checkDependencyPolicy';
+import { checkDependencyPolicy } from '../checkDependencyPolicy.js';
 
 jest.mock('node:fs', () => ({
   readFileSync: jest.fn()

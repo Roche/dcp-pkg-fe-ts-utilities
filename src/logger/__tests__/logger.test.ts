@@ -74,7 +74,7 @@ describe('Logger', () => {
     });
 
     it('logs in development mode (localhost)', async () => {
-        const { logger } = await import('../logger');
+        const { logger } = await import('../logger.js');
 
         logger.log('test log');
         logger.info('test info');
@@ -99,7 +99,7 @@ describe('Logger', () => {
         });
 
         jest.resetModules();
-        const { logger } = await import('../logger');
+        const { logger } = await import('../logger.js');
 
         logger.error('test error');
 
@@ -118,7 +118,7 @@ describe('Logger', () => {
         });
 
         jest.resetModules();
-        const { logger } = await import('../logger');
+        const { logger } = await import('../logger.js');
 
         logger.log('test log');
         logger.info('test info');
@@ -146,7 +146,7 @@ describe('Logger', () => {
         localStorage.setItem('devtools', 'true');
 
         jest.resetModules();
-        const { logger } = await import('../logger');
+        const { logger } = await import('../logger.js');
 
         logger.log('test log');
 
@@ -167,7 +167,7 @@ describe('Logger', () => {
         });
 
         jest.resetModules();
-        const { logger } = await import('../logger');
+        const { logger } = await import('../logger.js');
 
         logger.log('test log');
 
@@ -187,7 +187,7 @@ describe('Logger', () => {
         });
 
         jest.resetModules();
-        const { logger } = await import('../logger');
+        const { logger } = await import('../logger.js');
 
         // Should not log initially
         logger.log('before enable');
@@ -203,7 +203,7 @@ describe('Logger', () => {
     });
 
     it('setDevMode disables logging', async () => {
-        const { logger } = await import('../logger');
+        const { logger } = await import('../logger.js');
 
         // Should log initially (localhost)
         logger.log('before disable');
@@ -220,7 +220,7 @@ describe('Logger', () => {
     });
 
     it('isDevMode returns correct state', async () => {
-        const { logger } = await import('../logger');
+        const { logger } = await import('../logger.js');
 
         // Initially true (localhost)
         expect(logger.isDevMode()).toBe(true);
@@ -246,14 +246,14 @@ describe('Logger', () => {
             });
 
             jest.resetModules();
-            const { logger } = await import('../logger');
+            const { logger } = await import('../logger.js');
 
             expect(logger.isDevMode()).toBe(true);
         }
     });
 
     it('exposes logger globally', async () => {
-        const { logger } = await import('../logger');
+        const { logger } = await import('../logger.js');
 
         expect((global.window as any).__DCP_LOGGER__).toBe(logger);
     });

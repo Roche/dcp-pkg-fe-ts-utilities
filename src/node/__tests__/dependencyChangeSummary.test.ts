@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it, jest } from '@jest/globals';
 import { execSync } from 'node:child_process';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 
-import { generateDependencyChangeSummary } from '../dependencyChangeSummary';
+import { generateDependencyChangeSummary } from '../dependencyChangeSummary.js';
 
 jest.mock('node:child_process', () => ({
   execSync: jest.fn()
